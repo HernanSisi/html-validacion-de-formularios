@@ -24,17 +24,17 @@
                 <fieldset>
                     <legend class="form__label">Información básica</legend>
                     <div class="input-container">
-                        <input name="name" id="name" class="input" type="text" placeholder="Nombre">
+                        <input data-tipo="nombre" name="name" id="name" class="input" type="text" placeholder="Nombre" required maxlength="40">
                         <label class="input-label" for="name">Nombre</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="email" id="email" class="input" type="text" placeholder="Email">
+                        <input data-tipo="email" name="email" id="email" class="input" type="email" placeholder="Email" required maxlength="55">
                         <label class="input-label" for="email">Email</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="password" id="password" class="input" type="text" placeholder="Contraseña">
+                        <input data-tipo="password" name="password" id="password" class="input" type="password" placeholder="Contraseña" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{8,16}$" maxlength="16">
                         <label class="input-label" for="password">Contraseña</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -42,12 +42,12 @@
                 <fieldset>
                     <legend class="form__label">Información personal</legend>
                     <div class="input-container">
-                        <input name="birth" id="birth" class="input" type="text" placeholder="Fecha de nacimento">
+                        <input name="birth" id="birth" class="input" type="date" placeholder="Fecha de nacimento" required data-tipo="nacimiento">
                         <label class="input-label" for="birth">Fecha de nacimiento</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="phoneNumber" id="phoneNumber" class="input" type="text" placeholder="Número telefónico">
+                        <input required pattern="\d{8,10}" data-tipo="telefono" name="phoneNumber" id="phoneNumber" class="input" type="text" placeholder="Número telefónico" maxlength="10">
                         <label class="input-label" for="phoneNumber">Número telefónico</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -55,24 +55,26 @@
                 <fieldset>
                     <legend class="form__label">Dirección</legend>
                     <div class="input-container">
-                        <input name="cep" id="cep" class="input" type="text" placeholder="CEP">
+                        <input required data-tipo="direccion" name="cep" id="cep" class="input" type="tel" placeholder="CEP" minlength="10" maxlength="100" pattern="[\s\S]{10,100}">
                         <label class="input-label" for="cep">Dirección completa</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="city" id="city" class="input" type="text" placeholder="Ciudad">
+                        <input required data-tipo="ciudad" name="city" id="city" class="input" type="text" placeholder="Ciudad" minlength="10" maxlength="100" pattern="[\s\S]{10,100}">
                         <label class="input-label" for="city">Ciudad</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
-                        <input name="state" id="state" class="input" type="text" placeholder="Estado">
-                        <label class="input-label" for="state">Estado</label>
+                        <input required data-tipo="provincia" name="state" id="state" class="input required" type="text" placeholder="Privincia" minlength="10" maxlength="100" pattern="[\s\S]{10,100}">
+                        <label class="input-label" for="state">Provincia</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                 </fieldset>
-                <button class="button">Registrar</a>
+                <span style="color: var(--warning-color); display: block; margin-top: 0.5rem; padding-left: 0.5rem; text-align: center;">Los datos completados no son guardados.</span>
+                <button class="button">Registrar</button>
             </form>
         </section>
     </main>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>

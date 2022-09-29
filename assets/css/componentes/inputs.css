@@ -41,6 +41,7 @@
   font-size: var(--font-size-input-label);
 
   transition: all 0.25s;
+  cursor: text;
 }
 
 .input:not(:placeholder-shown) + .input-label,
