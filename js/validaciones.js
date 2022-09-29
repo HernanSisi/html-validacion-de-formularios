@@ -1,4 +1,3 @@
-console.clear();
 export function validar(input) {
     const tipo = input.dataset.tipo;
     if (validadores[tipo]) {
